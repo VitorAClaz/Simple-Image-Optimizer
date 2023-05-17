@@ -21,10 +21,10 @@ for file in "$input_dir"/*.{jpg,jpeg,png}; do
     output_file="$output_dir/${file##*/}"
 
     # Apply the convert command to resize and compress the image
-    convert "$file" -resize 80% -strip -quality 90 "$output_file"
+    convert "$file" -resize "800x600>" -strip -quality 80 "$output_file"
 
     # Apply the img-optimize command to further optimize the image
-    img-optimize "$output_file"
+    img-optimize "$output_file" >/dev/null
   fi
 done
 
